@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
         -------------
     */
 
+    if (isNaN(pin) || pin < 0 || pin > 13) {
+      return;
+    }
+
     var nodes;
     var pin_classname = pin.name ? pin.name : ("pin" + pin);
 
@@ -25,24 +29,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // iterate over all nodes and check if we can turn on or off
     var sibling_index;
-    var visibility = 'hidden';
+    var fill;
     var sibling_value;
     var i;
-    var classname_map = function(x){
-      if(this.indexOf(pin_classname, this.length - suffix.length) === -1) {
-        return x; // returns classes that are unequal to given node
-      }
-    };
+
+    function classname_map(x) {
+      return x.indexOf(pin_classname, x.length - pin_classname.length) === -1;
+    }
 
     for (i = 0; i < nodes.length; i++) {
       // 1. get other pin index for specified
-      sibling_index = node.children[i].classList.map(classname_map)[0]; // must be always 1!
-      sibling_value = myuno._getPinValue(sibling_index);
-      // HIGH value on col and HIGH on row
-      if(io.value === 1 && sibling_value === 1) {
-        visibility = 'visible';
+      fill = '#fafafa';
+      var siblings = Array.prototype.filter.call(nodes[i].classList, classname_map);
+      if (siblings.length > 0) {
+        sibling_value = myuno._getPinValue(siblings[0]);
+        // HIGH value on col and HIGH on row
+        if (io.value === arduino.HIGH && sibling_value === arduino.HIGH) {
+          fill = 'lime';
+        }
+        nodes[i].setAttribute("fill", fill);
       }
-      nodes[i].setAttribute("visibility", visibility);
     }
   }
 
@@ -69,15 +75,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var i;
     for (i = 0; i < nodes.length; i++) {
-      nodes[i].setAttribute("visibility", visibility);
+      if(nodes[i].classList.length === 1) // leds have exactly 2 classes
+        nodes[i].setAttribute("visibility", visibility);
     }
   }
   myuno.addonChange(write_callback); // add callback for pin value changes
+  myuno.addonChange(write_ledmatrix);
 
   var reset = false;
   var timeoutID = [];
 
   function loop() {
+    myuno.digitalWrite(9, arduino.HIGH);
     myuno.digitalWrite(13, arduino.HIGH);
 
     if (!reset && myuno.status == arduino.ON) {

@@ -237,7 +237,7 @@ arduino.uno.prototype.setStatus = function (status) {
 **/
 arduino.uno.prototype._getPinValue = function (pin) {
   // is there a leading pin?
-  if(pin.indexOf('pin') > 1) {
+  if(pin.indexOf('pin') === 0) {
     pin = pin.replace(/pin/g, '');
   }
 
@@ -247,7 +247,7 @@ arduino.uno.prototype._getPinValue = function (pin) {
     return null;
   }
 
-  return io_index.value; // current value for specified pin
+  return this.io.digital[io_index].value; // current value for specified pin
 };
 
 /**
@@ -312,6 +312,11 @@ arduino.uno.prototype.pinMode = function (pin, mode) {
 
 arduino.uno.prototype._pin = function (pin) {
   // analog pins are mapped to 14-19 inside the io.digital array
+  var _int = parseInt(pin);
+  if(!isNaN(_int)) {
+    pin = _int;
+  }
+
   switch (pin) {
   case 0:
   case 1:
