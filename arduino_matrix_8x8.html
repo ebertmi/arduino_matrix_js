@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8x8 LED Matrix</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div id="arduino">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewport="0 0 400 400" width="400" height="400">
+      <defs>
+        <filter id="led_glow"	x="-100%" y="-50%" width="15" height="15">
+          <fegaussianblur in="SourceGraphic" stddeviation="5" />
+        </filter>
+      </defs>
+        <image y="20" width="400" height="410" xlink:href="./arduino_blank.png"/>
+        <circle id="arduino_reset" cx="66" cy="84" r="10" fill-opacity="0.0" class="arduino-action" fill="lime" />
+        <rect x="177" y="126" height="7" width="11" fill-opacity="0.5" fill="red" class="pin13" visibility="hidden"/>
+        <rect x="345" y="151" height="7" width="11" fill-opacity="0.5" fill="red" class="LEDON" visibility="hidden"/>
+        <rect id="arduino_on" x="343" y="151" height="8" width="15" fill-opacity="0.0" fill="lime" class="arduino-action"/>
+        <g id="led_matrix_svg_group" transform="translate(150, 110) scale(1.2)">
+          <g>
+            <path  d="M158.078,33.7619L158.078,8.63198l-24.965,0l0,1.088l-26.736,0L106.377,8.63198L53.113,8.63198l0,1.088L26.377,9.71998L26.377,8.63198L1.411,8.63198l0,25.131L0.322,33.7629l0,26.736l1.089,0l0,53.2649L0.322,113.764l0,26.735l1.089,0l0,25.132l156.667,0l0,-25.132l-1.089,0l0,-26.735l1.089,0L158.078,60.4989l-1.089,0L156.989,33.7619L158.078,33.7619zM26.377,166.719l26.736,0l0,-1.088L26.377,165.631L26.377,166.719zM106.377,166.719l26.736,0l0,-1.088l-26.736,0L106.377,166.719L106.377,166.719z"/>
+            <g>
+            <!-- row: 0 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="17.5970" r="6.52" class="pin13 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="17.5970" r="6.52" class="pin13 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="17.5970" r="6.52" class="pin13 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="17.5970" r="6.52" class="pin13 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="17.5970" r="6.52" class="pin13 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="17.5970" r="6.52" class="pin13 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="17.5970" r="6.52" class="pin13 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="17.5970" r="6.52" class="pin13 pin6"/>
+              </g>
+            <!-- row: 1 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="37.4390" r="6.52" class="pin8 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="37.4390" r="6.52" class="pin8 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="37.4390" r="6.52" class="pin8 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="37.4390" r="6.52" class="pin8 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="37.4390" r="6.52" class="pin8 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="37.4390" r="6.52" class="pin8 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="37.4390" r="6.52" class="pin8 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="37.4390" r="6.52" class="pin8 pin6"/>
+              </g>
+            <!-- row: 2 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="57.2810" r="6.52" class="pin17 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="57.2810" r="6.52" class="pin17 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="57.2810" r="6.52" class="pin17 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="57.2810" r="6.52" class="pin17 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="57.2810" r="6.52" class="pin17 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="57.2810" r="6.52" class="pin17 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="57.2810" r="6.52" class="pin17 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="57.2810" r="6.52" class="pin17 pin6"/>
+              </g>
+            <!-- row: 3 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="77.1230" r="6.52" class="pin10 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="77.1230" r="6.52" class="pin10 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="77.1230" r="6.52" class="pin10 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="77.1230" r="6.52" class="pin10 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="77.1230" r="6.52" class="pin10 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="77.1230" r="6.52" class="pin10 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="77.1230" r="6.52" class="pin10 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="77.1230" r="6.52" class="pin10 pin6"/>
+              </g>
+            <!-- row: 4 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="96.9650" r="6.52" class="pin5 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="96.9650" r="6.52" class="pin5 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="96.9650" r="6.52" class="pin5 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="96.9650" r="6.52" class="pin5 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="96.9650" r="6.52" class="pin5 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="96.9650" r="6.52" class="pin5 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="96.9650" r="6.52" class="pin5 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="96.9650" r="6.52" class="pin5 pin6"/>
+              </g>
+            <!-- row: 5 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="116.8070" r="6.52" class="pin16 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="116.8070" r="6.52" class="pin16 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="116.8070" r="6.52" class="pin16 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="116.8070" r="6.52" class="pin16 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="116.8070" r="6.52" class="pin16 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="116.8070" r="6.52" class="pin16 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="116.8070" r="6.52" class="pin16 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="116.8070" r="6.52" class="pin16 pin6"/>
+              </g>
+            <!-- row: 6 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="136.6490" r="6.52" class="pin4 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="136.6490" r="6.52" class="pin4 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="136.6490" r="6.52" class="pin4 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="136.6490" r="6.52" class="pin4 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="136.6490" r="6.52" class="pin4 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="136.6490" r="6.52" class="pin4 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="136.6490" r="6.52" class="pin4 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="136.6490" r="6.52" class="pin4 pin6"/>
+              </g>
+            <!-- row: 7 -->
+              <g>
+                <circle  fill="#fafafa" cx="10.037" cy="156.4910" r="6.52" class="pin14 pin9"/>
+                <circle  fill="#fafafa" cx="29.953" cy="156.4910" r="6.52" class="pin14 pin3"/>
+                <circle  fill="#fafafa" cx="49.869" cy="156.4910" r="6.52" class="pin14 pin2"/>
+                <circle  fill="#fafafa" cx="69.785" cy="156.4910" r="6.52" class="pin14 pin12"/>
+                <circle  fill="#fafafa" cx="89.701" cy="156.4910" r="6.52" class="pin14 pin15"/>
+                <circle  fill="#fafafa" cx="109.617" cy="156.4910" r="6.52" class="pin14 pin11"/>
+                <circle  fill="#fafafa" cx="129.533" cy="156.4910" r="6.52" class="pin14 pin7"/>
+                <circle  fill="#fafafa" cx="149.449" cy="156.4910" r="6.52" class="pin14 pin6"/>
+              </g>
+            </g>
+          </g>
+        <g >
+        <rect  width="57.199" x="50.599" y="165.685" fill="#404040" height="7.19799"/>
+        <polygon  fill="#2A2A29" points="51.586,166.869,52.608,167.894,55.394,167.894,56.418,166.869"/>
+        <polygon  fill="#474747" points="56.418,166.869,55.394,167.896,55.394,170.677,56.418,171.701"/>
+        <polygon  fill="#595959" points="56.417,171.701,55.393,170.677,52.608,170.677,51.586,171.701"/>
+        <polygon  fill="#373737" points="51.584,171.701,52.608,170.676,52.608,167.894,51.584,166.869"/>
+        <rect  width="2.78" x="52.612" y="167.894" height="2.77999"/>
+        <polygon  fill="#2A2A29" points="58.785,166.869,59.807,167.894,62.593,167.894,63.617,166.869"/>
+        <polygon  fill="#474747" points="63.617,166.869,62.593,167.896,62.593,170.677,63.617,171.701"/>
+        <polygon  fill="#595959" points="63.616,171.701,62.592,170.677,59.807,170.677,58.785,171.701"/>
+        <polygon  fill="#373737" points="58.783,171.701,59.807,170.676,59.807,167.894,58.783,166.869"/>
+        <rect  width="2.78" x="67.01" y="167.894" height="2.77999"/>
+        <rect  width="2.78" x="59.811" y="167.894" height="2.77999"/>
+        <polygon  fill="#2A2A29" points="65.984,166.869,67.009,167.894,69.791,167.894,70.815,166.869"/>
+        <polygon  fill="#474747" points="70.815,166.869,69.791,167.896,69.791,170.677,70.815,171.701"/>
+        <polygon  fill="#595959" points="70.815,171.701,69.79,170.677,67.009,170.677,65.984,171.701"/>
+        <polygon  fill="#373737" points="65.982,171.701,67.009,170.676,67.009,167.894,65.982,166.869"/>
+        <rect  width="2.781" x="74.21" y="167.894" height="2.77999"/>
+        <polygon  fill="#2A2A29" points="73.183,166.869,74.208,167.894,76.992,167.894,78.015,166.869"/>
+        <polygon  fill="#474747" points="78.015,166.869,76.992,167.896,76.992,170.677,78.015,171.701"/>
+        <polygon  fill="#595959" points="78.015,171.701,76.991,170.677,74.208,170.677,73.183,171.701"/>
+        <polygon  fill="#373737" points="73.181,171.701,74.208,170.676,74.208,167.894,73.181,166.869"/>
+        <rect  width="2.781" x="81.411" y="167.894" height="2.77999"/>
+        <polygon  fill="#2A2A29" points="80.385,166.869,81.409,167.894,84.192,167.894,85.218,166.869"/>
+        <polygon  fill="#474747" points="85.218,166.869,84.192,167.896,84.192,170.677,85.218,171.701"/>
+        <polygon  fill="#595959" points="85.216,171.701,84.19,170.677,81.409,170.677,80.385,171.701"/>
+        <polygon  fill="#373737" points="80.382,171.701,81.409,170.676,81.409,167.894,80.382,166.869"/>
+        <rect  width="2.78" x="88.61" y="167.894" height="2.77999"/>
+        <rect  width="2.781" x="95.808" y="167.894" height="2.77999"/>
+        <polygon  fill="#2A2A29" points="87.585,166.869,88.608,167.894,91.39,167.894,92.417,166.869"/>
+        <polygon  fill="#474747" points="92.417,166.869,91.39,167.896,91.39,170.677,92.417,171.701"/>
+        <polygon  fill="#595959" points="92.415,171.701,91.39,170.677,88.608,170.677,87.585,171.701"/>
+        <polygon  fill="#373737" points="87.583,171.701,88.608,170.676,88.608,167.894,87.583,166.869"/>
+        <polygon  points="97.2,169.285,97.2,169.285,97.2,169.285"/>
+        <polygon  fill="#2A2A29" points="94.784,166.869,95.806,167.894,98.593,167.894,99.616,166.869"/>
+        <polygon  fill="#474747" points="99.616,166.869,98.593,167.896,98.593,170.677,99.616,171.701"/>
+        <polygon  fill="#595959" points="99.616,171.701,98.591,170.677,95.806,170.677,94.784,171.701"/>
+        <polygon  fill="#373737" points="94.782,171.701,95.806,170.676,95.806,167.894,94.782,166.869"/>
+        <rect  width="2.781" x="103.006" y="167.894" height="2.77999"/>
+        <polygon  fill="#2A2A29" points="101.982,166.869,103.004,167.894,105.791,167.894,106.814,166.869"/>
+        <polygon  fill="#474747" points="106.814,166.869,105.785,167.896,105.791,170.677,106.814,171.701"/>
+        <polygon  fill="#595959" points="106.814,171.701,105.789,170.677,103.004,170.677,101.982,171.701"/>
+        <polygon  fill="#373737" points="101.980,171.701,103.004,170.676,103.004,167.894,101.980,166.869"/>
+        </g>
+        <g >
+        <polygon  fill="#404040" points="51.964,1.432,50.4,2.99599,50.4,7.06899,51.964,8.63198,56.036,8.63198,57.601,7.06899,57.601,2.99599,56.036,1.432"/>
+        <rect  width="2.297" x="52.853" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.183" x="53.41" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="52.853,3.88199,53.41,4.43999,54.591,4.43999,55.148,3.88199"/>
+        <polygon  fill="#80795B" points="54.591,5.62199,54.591,4.43999,55.148,3.88199,55.148,6.18099"/>
+        <polygon  fill="#5E5B43" points="53.410,5.62199,54.591,5.62199,55.148,6.18099,52.853,6.18099"/>
+        <polygon  fill="#9A916C" points="52.853,3.88199,53.410,4.43999,53.410,5.62199,52.853,6.18099"/>
+        <polygon  fill="#404040" points="59.163,1.432,57.599,2.99599,57.599,7.06899,59.163,8.63198,63.235,8.63198,64.8,7.06899,64.8,2.99599,63.235,1.432"/>
+        <rect  width="2.297" x="60.052" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.183" x="60.609" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="60.052,3.88199,60.609,4.43999,61.79,4.43999,62.347,3.88199"/>
+        <polygon  fill="#80795B" points="61.79,5.62199,61.79,4.43999,62.347,3.88199,62.347,6.18099"/>
+        <polygon  fill="#5E5B43" points="60.609,5.62199,61.79,5.62199,62.347,6.18099,60.052,6.18099"/>
+        <polygon  fill="#9A916C" points="60.052,3.88199,60.609,4.43999,60.609,5.62199,60.052,6.18099"/>
+        <polygon  fill="#404040" points="66.363,1.432,64.8,2.99599,64.8,7.06899,66.363,8.63198,70.435,8.63198,72,7.06899,72,2.99599,70.435,1.432"/>
+        <rect  width="2.298" x="67.251" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.183" x="67.808" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="67.251,3.88199,67.808,4.43999,68.991,4.43999,69.549,3.88199"/>
+        <polygon  fill="#80795B" points="68.991,5.62199,68.991,4.43999,69.549,3.88199,69.549,6.18099"/>
+        <polygon  fill="#5E5B43" points="67.808,5.62199,68.991,5.62199,69.549,6.18099,67.251,6.18099"/>
+        <polygon  fill="#9A916C" points="67.251,3.88199,67.808,4.43999,67.808,5.62199,67.251,6.18099"/>
+        <polygon  fill="#404040" points="73.562,1.432,72,2.99599,72,7.06899,73.562,8.63198,77.635,8.63198,79.2,7.06899,79.2,2.99599,77.635,1.432"/>
+        <rect  width="2.297" x="74.452" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.185" x="75.009" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="74.452,3.88199,75.009,4.43999,76.19,4.43999,76.749,3.88199"/>
+        <polygon  fill="#80795B" points="76.19,5.62199,76.19,4.43999,76.749,3.88199,76.749,6.18099"/>
+        <polygon  fill="#5E5B43" points="75.009,5.62199,76.19,5.62199,76.749,6.18099,74.452,6.18099"/>
+        <polygon  fill="#9A916C" points="74.452,3.88199,75.009,4.43999,75.009,5.62199,74.452,6.18099"/>
+        <polygon  fill="#404040" points="80.761,1.432,79.2,2.99599,79.2,7.06899,80.761,8.63198,84.836,8.63198,86.399,7.06899,86.399,2.99599,84.836,1.432"/>
+        <rect  width="2.297" x="81.651" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.182" x="82.21" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="81.651,3.88199,82.21,4.43999,83.389,4.43999,83.948,3.88199"/>
+        <polygon  fill="#80795B" points="83.389,5.62199,83.389,4.43999,83.948,3.88199,83.948,6.18099"/>
+        <polygon  fill="#5E5B43" points="82.21,5.62199,83.389,5.62199,83.948,6.18099,81.651,6.18099"/>
+        <polygon  fill="#9A916C" points="81.651,3.88199,82.21,4.43999,82.21,5.62199,81.651,6.18099"/>
+        <polygon  fill="#404040" points="87.964,1.432,86.399,2.99599,86.399,7.06899,87.964,8.63198,92.036,8.63198,93.599,7.06899,93.599,2.99599,92.036,1.432"/>
+        <rect  width="2.299" x="88.85" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.183" x="89.409" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="88.85,3.88199,89.409,4.43999,90.591,4.43999,91.149,3.88199"/>
+        <polygon  fill="#80795B" points="90.591,5.62199,90.591,4.43999,91.149,3.88199,91.149,6.18099"/>
+        <polygon  fill="#5E5B43" points="89.409,5.62199,90.591,5.62199,91.149,6.18099,88.85,6.18099"/>
+        <polygon  fill="#9A916C" points="88.85,3.88199,89.409,4.43999,89.409,5.62199,88.85,6.18099"/>
+        <polygon  fill="#404040" points="95.163,1.432,93.599,2.99599,93.599,7.06899,95.163,8.63198,99.235,8.63198,100.8,7.06899,100.8,2.99599,99.235,1.432"/>
+        <rect  width="2.297" x="96.052" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.183" x="96.609" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="96.052,3.88199,96.609,4.43999,97.79,4.43999,98.347,3.88199"/>
+        <polygon  fill="#80795B" points="97.79,5.62199,97.79,4.43999,98.347,3.88199,98.347,6.18099"/>
+        <polygon  fill="#5E5B43" points="96.609,5.62199,97.79,5.62199,98.347,6.18099,96.052,6.18099"/>
+        <polygon  fill="#9A916C" points="96.052,3.88199,96.609,4.43999,96.609,5.62199,96.052,6.18099"/>
+        <polygon  fill="#404040" points="102.362,1.432,100.798,2.99599,100.798,7.06899,102.362,8.63198,106.4343,8.63198,107.999,7.06899,107.99,2.99599,106.434,1.432"/>
+        <rect  width="2.297" x="103.251" y="3.88199" fill="#8D8C8C" height="2.299"/>
+        <rect  width="1.183" x="104.108" y="4.43999" fill="#8C8663" height="1.184"/>
+        <polygon  fill="#B8AF82" points="103.251,3.88199,103.808,4.43999,104.989,4.43999,105.546,3.88199"/>
+        <polygon  fill="#80795B" points="104.989,5.62199,104.989,4.43999,105.546,3.88199,105.546,6.18099"/>
+        <polygon  fill="#5E5B43" points="104.108,5.62199,104.989,5.62199,105.546,6.18099,103.251,6.18099"/>
+        <polygon  fill="#9A916C" points="103.251,3.88199,104.108,4.43999,104.108,5.62199,103.251,6.18099"/>
+      </g>
+      </g>
+      <!-- connectors -->
+      <line stroke-linecap="round" stroke="#418dd9" x1="150" y1="130" x2="105.062" y2="36.9576" stroke-width="4"/>
+      </svg>
+    </div>
+    <!--<script src="./jquery-1.11.0.min.js"></script>-->
+    <script src="./arduino.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
