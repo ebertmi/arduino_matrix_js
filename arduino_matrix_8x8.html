@@ -17,7 +17,26 @@
         <rect x="177" y="126" height="7" width="11" fill-opacity="0.5" fill="red" class="pin13" visibility="hidden"/>
         <rect x="345" y="151" height="7" width="11" fill-opacity="0.5" fill="red" class="LEDON" visibility="hidden"/>
         <rect id="arduino_on" x="343" y="151" height="8" width="15" fill-opacity="0.0" fill="lime" class="arduino-action"/>
-        <g id="led_matrix_svg_group" transform="translate(150, 110) scale(1.2)">
+        <!-- row connectors -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="179" x2="188" y2="78" stroke-width="4" /> <!-- pin 13 row -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="188" x2="256" y2="78" stroke-width="4" /> <!-- pin 8 row -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="196" x2="346" y2="336" stroke-width="4" /> <!-- pin 17 row -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="205" x2="229" y2="78" stroke-width="4" /> <!-- pin 10 row -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="213" x2="318" y2="78" stroke-width="4" /> <!-- pin 5 row -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="222" x2="332" y2="336" stroke-width="4" /> <!-- pin 16 row -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="231" x2="305" y2="78" stroke-width="4" /> <!-- pin 4 row -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="348" y1="239" x2="305" y2="336" stroke-width="4" /> <!-- pin 14 row -->
+        <!-- end row connectors -->
+        <!-- start col connectors -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="178" x2="243" y2="78" stroke-width="4" /> <!-- pin 9 col -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="188" x2="332" y2="78" stroke-width="4" /> <!-- pin 3 col  -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="196" x2="346" y2="78" stroke-width="4" /> <!-- pin 2 col  -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="204" x2="202" y2="78" stroke-width="4" /> <!-- pin 12 col -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="213" x2="318" y2="336" stroke-width="4" /> <!-- pin 15 col -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="222" x2="215" y2="78" stroke-width="4" /> <!-- pin 11 col -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="230" x2="278" y2="78" stroke-width="4" /> <!-- pin 7 col -->
+        <line stroke-linecap="round" stroke="#418dd9" x1="151" y1="239" x2="292" y2="78" stroke-width="4" /> <!-- pin 6 col -->
+        <g id="led_matrix_svg_group" transform="scale(1.2) translate(128, 90)">
           <g>
             <path  d="M158.078,33.7619L158.078,8.63198l-24.965,0l0,1.088l-26.736,0L106.377,8.63198L53.113,8.63198l0,1.088L26.377,9.71998L26.377,8.63198L1.411,8.63198l0,25.131L0.322,33.7629l0,26.736l1.089,0l0,53.2649L0.322,113.764l0,26.735l1.089,0l0,25.132l156.667,0l0,-25.132l-1.089,0l0,-26.735l1.089,0L158.078,60.4989l-1.089,0L156.989,33.7619L158.078,33.7619zM26.377,166.719l26.736,0l0,-1.088L26.377,165.631L26.377,166.719zM106.377,166.719l26.736,0l0,-1.088l-26.736,0L106.377,166.719L106.377,166.719z"/>
             <g>
@@ -111,6 +130,7 @@
               </g>
             </g>
           </g>
+        <g transform="rotate(90, 95, 95) translate(5, 23.5)">
         <g >
         <rect  width="57.199" x="50.599" y="165.685" fill="#404040" height="7.19799"/>
         <polygon  fill="#2A2A29" points="51.586,166.869,52.608,167.894,55.394,167.894,56.418,166.869"/>
@@ -214,8 +234,7 @@
         <polygon  fill="#9A916C" points="103.251,3.88199,104.108,4.43999,104.108,5.62199,103.251,6.18099"/>
       </g>
       </g>
-      <!-- connectors -->
-      <line stroke-linecap="round" stroke="#418dd9" x1="150" y1="130" x2="105.062" y2="36.9576" stroke-width="4"/>
+    </g>
       </svg>
     </div>
     <!--<script src="./jquery-1.11.0.min.js"></script>-->

@@ -159,37 +159,37 @@ arduino.uno = function (resetID, onID, lID, txID) {
     'name': 'VCC'
   };
   this.io.analog0 = {
-    'pin': 'a0',
+    'pin': '14',
     'value': 0,
     'pinmode': arduino.OUTPUT,
     'name': 'analog0'
   };
   this.io.analog1 = {
-    'pin': 'a1',
+    'pin': '15',
     'value': 0,
     'pinmode': arduino.OUTPUT,
     'name': 'analog1'
   };
   this.io.analog2 = {
-    'pin': 'a2',
+    'pin': '16',
     'value': 0,
     'pinmode': arduino.OUTPUT,
     'name': 'analog2'
   };
   this.io.analog3 = {
-    'pin': 'a3',
+    'pin': '17',
     'value': 0,
     'pinmode': arduino.OUTPUT,
     'name': 'analog3'
   };
   this.io.analog4 = {
-    'pin': 'a4',
+    'pin': '18',
     'value': 0,
     'pinmode': arduino.OUTPUT,
     'name': 'analog4'
   };
   this.io.analog5 = {
-    'pin': 'a5',
+    'pin': '19',
     'value': 0,
     'pinmode': arduino.OUTPUT,
     'name': 'analog5'
@@ -333,17 +333,23 @@ arduino.uno.prototype._pin = function (pin) {
   case 12:
   case 13:
     return pin;
+  case 14:
   case 'a0':
     return 14;
+  case 15:
   case 'a1':
     return 15;
   case 'a2':
+  case 16:
     return 16;
   case 'a3':
+  case 17:
     return 17;
   case 'a4':
+  case 18:
     return 18;
   case 'a5':
+  case 19:
     return 19;
   default: return null;
   }
